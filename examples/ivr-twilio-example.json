@@ -1,0 +1,20 @@
+{
+    "start": {
+      "message": "Welcome to our service. Press 1 for Sales, 2 for Support.",
+      "options": {
+        "1": "sales",
+        "2": "support"
+      }
+    },
+    "sales": {
+      "message": "You chose Sales. We will connect you shortly.",
+      "action": "dial",
+      "number": "+12345678901"
+    },
+    "support": {
+      "message": "You chose Support. We will connect you shortly.",
+      "action": "dial",
+      "number": "+10987654321"
+    }
+}
+  
