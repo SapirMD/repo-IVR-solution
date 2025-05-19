@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Load IVR configuration
 const { twiml } = twilio;
 const ivrData = JSON.parse(fs.readFileSync(path.join(__dirname, jsonPath), "utf-8"));
-console.log("ivrData Dir: ", path.join(__dirname, jsonPath))
+console.log("Using ivrData from: ", path.join(__dirname, jsonPath))
 
 // Route: /voice
 app.post("/voice", (req: Request, res: Response) => {
