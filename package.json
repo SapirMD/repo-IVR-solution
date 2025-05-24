@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "vitest",
-  "test:ui": "vitest --ui"
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,11 @@
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
     "@types/express": "^5.0.1",
-    "typescript": "^5.8.3"
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-import": "^2.31.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
   }
 }

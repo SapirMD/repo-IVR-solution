@@ -6,6 +6,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// // THIS FILE IS NO LONGER PART OF THE LOGIC // //
+
 // Convert import.meta.url to __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

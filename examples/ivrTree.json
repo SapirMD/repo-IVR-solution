@@ -3,7 +3,7 @@
     "entrypoint": "main",
     "nodes": {
       "main": {
-        "prompt": "Welcome.",
+        "prompt": "Welcome. this is the entry point.",
         "inputType": "dtmfOrSpeech",
         "options": [
           {"choice": "1", "label": "Sales", "action": "gotoNode", "target": "sales"},
