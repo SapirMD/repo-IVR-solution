@@ -40,13 +40,23 @@ export function handleNode(config: Config, nodeId: string, digit?: string): stri
     return twiml.toString();
   }
 
-  const gather = twiml.gather({
-    action: `/voice?nodeId=${nodeId}`,
-    numDigits: 1,
-    method: 'POST',
-  });
 
-  gather.say(node.prompt);
+  
+ const gather = twiml.gather({
+  action: `/voice?nodeId=${nodeId}`,
+  numDigits: 1,
+  method: 'POST',
+});
+
+gather.say(node.prompt); // first <Say>
+
+// constructing string for avaliable options in the node:
+if (node.options && node.options.length > 0) {
+  const optionsPrompt = node.options
+    .map(opt => `press ${opt.choice} for ${opt.label}`)
+    .join('. ') + '.';
+  gather.say(optionsPrompt); // second <Say>
+}
 
   return twiml.toString();
 }

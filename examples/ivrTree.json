@@ -8,7 +8,7 @@
         "options": [
           {"choice": "1", "label": "Sales", "action": "gotoNode", "target": "sales"},
           {"choice": "2", "label": "Support", "action": "gotoNode", "target": "support"},
-          {"choice": "0", "label": "Agent", "action": "callCenter"}
+          {"choice": "3", "label": "Agent", "action": "callCenter"}
         ],
         "fallback": {"action": "gotoNode", "target": "main"}
       },
@@ -20,7 +20,7 @@
       "support": {
         "prompt": "Connecting Support…",
         "action": "callCenter",
-        "target": "Expert PC Tech Support Online - Support.com "
+        "target": "Expert PC Tech Support Online - Support.com"
       }
     }
   }
