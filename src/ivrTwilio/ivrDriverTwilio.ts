@@ -40,8 +40,7 @@ export function handleNode(config: Config, nodeId: string, digit?: string): stri
     return twiml.toString();
   }
 
-  
- const gather = twiml.gather({
+const gather = twiml.gather({
   action: `/voice?nodeId=${nodeId}`,
   numDigits: 1,
   method: 'POST',
@@ -57,5 +56,5 @@ if (node.options && node.options.length > 0) {
   gather.say(optionsPrompt); // second <Say>
 }
 
-  return twiml.toString();
+return twiml.toString();
 }
