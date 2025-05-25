@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { ConfigSchema } from "./src/types/ivr";
+import { ConfigSchema } from "./src/types/ivrTree";
 import validConfig from "./examples/ivr-config.json";
 
 describe("IVR Config Schema", () => {
