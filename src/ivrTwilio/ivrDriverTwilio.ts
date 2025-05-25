@@ -20,7 +20,7 @@ export function handleNode(config: Config, nodeId: string, digit?: string): stri
       if (selectedOption.action === 'gotoNode' && selectedOption.target) {
         return handleNode(config, selectedOption.target);
       } else if (selectedOption.action === 'callCenter') {
-        twiml.say(`Connecting you to an agent for ${selectedOption.label}`);
+        twiml.say(`Connecting you to ${selectedOption.label}`);
         twiml.dial('YOUR_CALL_CENTER_PHONE_NUMBER');
         return twiml.toString();
       }
@@ -39,7 +39,6 @@ export function handleNode(config: Config, nodeId: string, digit?: string): stri
     twiml.dial('YOUR_CALL_CENTER_PHONE_NUMBER');
     return twiml.toString();
   }
-
 
   
  const gather = twiml.gather({

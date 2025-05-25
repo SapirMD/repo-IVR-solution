@@ -15,19 +15,21 @@ const ivrData = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 
 export const reqHandler = (req: Request, res: Response) => {
   const digits = req.body.Digits;
-  const nodeId = req.body.nodeId || ivrData.entrypoint; // default to main node
+  // const nodeId = req.body.nodeId || ivrData.entrypoint; 
+  const nodeId = (req.query.nodeId as string) || ivrData.entrypoint; // default to main node
   const twiml = handleNode(ivrData, nodeId, digits);
+
 
   res.type('text/xml').send(twiml);
 };
 
 
 // is neccesary ? vv
-export const menuHandler = (req: Request, res: Response) => {
-  const digit = req.body.Digits;
-  const currentNodeId = req.query.nodeId as string;
+// export const menuHandler = (req: Request, res: Response) => {
+//   const digit = req.body.Digits;
+//   const currentNodeId = req.query.nodeId as string;
 
-  const twiml = handleNode(ivrData, currentNodeId, digit);
-  res.type('text/xml').send(twiml);
-};
+//   const twiml = handleNode(ivrData, currentNodeId, digit);
+//   res.type('text/xml').send(twiml);
+// };
 

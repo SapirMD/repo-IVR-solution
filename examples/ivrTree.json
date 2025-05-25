@@ -39,7 +39,7 @@
       "agent-sassy": {
         "prompt": "Calling Sassy…",
         "action": "callCenter",
-        "target": "Sassy's number"
+        "target": "Sassy's number" 
       }
     }
   }
