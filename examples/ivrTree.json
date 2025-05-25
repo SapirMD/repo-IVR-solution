@@ -8,7 +8,7 @@
         "options": [
           {"choice": "1", "label": "Sales", "action": "gotoNode", "target": "sales"},
           {"choice": "2", "label": "Support", "action": "gotoNode", "target": "support"},
-          {"choice": "3", "label": "Agent", "action": "callCenter"}
+          {"choice": "3", "label": "Agents", "action": "gotoNode", "target": "agents"}
         ],
         "fallback": {"action": "gotoNode", "target": "main"}
       },
@@ -21,6 +21,25 @@
         "prompt": "Connecting Support…",
         "action": "callCenter",
         "target": "Expert PC Tech Support Online - Support.com"
+      },
+      "agents": {
+        "prompt": "Choose the agent you want to be connected to.",
+        "inputType": "dtmfOrSpeech",
+        "options": [
+          {"choice": "1", "label": "Sapir", "action": "callCenter", "target": "agent-sapir"},
+          {"choice": "2", "label": "Sassy", "action": "callCenter", "target": "agent-sassy"}
+        ],
+        "fallback": {"action": "gotoNode", "target": "agents"}
+      },
+      "agent-sapir": {
+        "prompt": "Calling Sapir…",
+        "action": "callCenter",
+        "target": "sapir's number"
+      },
+      "agent-sassy": {
+        "prompt": "Calling Sassy…",
+        "action": "callCenter",
+        "target": "Sassy's number"
       }
     }
   }
