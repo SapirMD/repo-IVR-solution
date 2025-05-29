@@ -14,32 +14,22 @@
       },
       "sales": {
         "prompt": "Connecting Sales…",
-        "action": "callCenter",
-        "target": "Home"
+        "action": "dial",
+        "number": "+12345678901"
       },
       "support": {
         "prompt": "Connecting Support…",
-        "action": "callCenter",
-        "target": "Expert PC Tech Support Online - Support.com"
+        "action": "dial",
+        "number": "+10987654321"
       },
       "agents": {
         "prompt": "Choose the agent you want to be connected to.",
         "inputType": "dtmfOrSpeech",
         "options": [
-          {"choice": "1", "label": "Sapir", "action": "callCenter", "target": "agent-sapir"},
-          {"choice": "2", "label": "Sassy", "action": "callCenter", "target": "agent-sassy"}
+          {"choice": "1", "label": "Sapir", "action": "dial", "number": "+12345678901"},
+          {"choice": "2", "label": "Sassy", "action": "dial", "number": "+10987654321"}
         ],
         "fallback": {"action": "gotoNode", "target": "agents"}
-      },
-      "agent-sapir": {
-        "prompt": "Calling Sapir…",
-        "action": "callCenter",
-        "target": "sapir's number"
-      },
-      "agent-sassy": {
-        "prompt": "Calling Sassy…",
-        "action": "callCenter",
-        "target": "Sassy's number" 
       }
     }
   }

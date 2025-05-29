@@ -1,14 +1,15 @@
 import { describe, it, expect } from "vitest";
-import { ConfigSchema } from "../src/types/ivrTree";
-import validConfig from "../examples/ivr-config.json";
+import { ivrTreeSchema } from "../src/types/ivrTreeSchema";
+import ivrTree from "../examples/ivrTree.json";
 
-describe("IVR Config Schema", () => {
+
+describe("valid ivrSchema configuration", () => {
   it("parses valid config without error", () => {
-    expect(() => ConfigSchema.parse(validConfig)).not.toThrow();
+    expect(() => ivrTreeSchema.parse(ivrTree)).not.toThrow();
   });
 
-  it("rejects malformed config", () => {
-    const broken = { ...validConfig, nodes: "not-an-object" };
-    expect(() => ConfigSchema.parse(broken)).toThrow();
+  it("rejects malformed configuration", () => {
+    const broken = { ...ivrTree, nodes: "not-an-object" };
+    expect(() => ivrTreeSchema.parse(broken)).toThrow();
   });
 });

@@ -22,19 +22,30 @@ npm install
 ```
 
 ### 3. Compile TypeScript
-
-```bash
-npx tsc
+To compile the TypeScript code:
 ```
-
-This will generate the output in the `dist/` folder.
+npm run build
+```
+This will:
+1. Delete the old dist/ folder using rimraf
+2. Compile the TypeScript files into dist/ using tsc
 
 ### 4. Run the Project
-
+To build and run the app:
 ```bash
-node ./dist/index.js
+npm start
 ```
+This will:
+1. Clean the dist/ folder
+2. Compile the TypeScript code
+3. Run the compiled output with Node.js
 
+
+### 🧹 Clean the Build Output
+To manually delete the dist/ folder:
+```
+npm run clean
+```
 ---
 
 ## 📄 Notes
