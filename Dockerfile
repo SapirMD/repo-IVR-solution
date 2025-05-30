@@ -13,10 +13,10 @@ RUN npm install -D typescript
 COPY . .
 
 # Build TypeScript
-RUN npx tsc
+RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "./dist/index.js"]
+CMD ["npm", "start"]

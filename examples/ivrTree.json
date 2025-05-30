@@ -1,0 +1,35 @@
+{
+    "id": "site-001",
+    "entrypoint": "main",
+    "nodes": {
+      "main": {
+        "prompt": "Welcome. this is the entry point.",
+        "inputType": "dtmfOrSpeech",
+        "options": [
+          {"choice": "1", "label": "Sales", "action": "gotoNode", "target": "sales"},
+          {"choice": "2", "label": "Support", "action": "gotoNode", "target": "support"},
+          {"choice": "3", "label": "Agents", "action": "gotoNode", "target": "agents"}
+        ],
+        "fallback": {"action": "gotoNode", "target": "main"}
+      },
+      "sales": {
+        "prompt": "Connecting Sales…",
+        "action": "dial",
+        "number": "+12345678901"
+      },
+      "support": {
+        "prompt": "Connecting Support…",
+        "action": "dial",
+        "number": "+10987654321"
+      },
+      "agents": {
+        "prompt": "Choose the agent you want to be connected to.",
+        "inputType": "dtmfOrSpeech",
+        "options": [
+          {"choice": "1", "label": "Sapir", "action": "dial", "number": "+12345678901"},
+          {"choice": "2", "label": "Sassy", "action": "dial", "number": "+10987654321"}
+        ],
+        "fallback": {"action": "gotoNode", "target": "agents"}
+      }
+    }
+  }
